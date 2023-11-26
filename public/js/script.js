@@ -29,11 +29,12 @@ function alterarTema() {
 function verificarTema() {
     const tema = localStorage.getItem("tema")
     const body = document.querySelector("body")
+    const button = document.querySelector(".tema-button")
 
     if (tema) {
         if (tema === "dark") {
             body.classList.add("dark")
-            button.innerHTML = `<img src="/imagens/sun-icon.png" alt="Icone do sol">`
+            button.innerHTML = `<img src="/imagens/sun-icon.png" alt="Icone do Sol">`
         } else {
             body.classList.add("light")
             button.innerHTML = `<img src="/imagens/moon-icon.png" alt="Icone de lua">`
