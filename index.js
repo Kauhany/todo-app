@@ -14,13 +14,21 @@ app.get('/', (requisicao, resposta) => {
 })
 
 const conexao = mysql.createConnection({
-    host: "localHost",
+    host: "localhost",
     user: "root",
     password: "root",
     database: "todoapp",
     port: 3306
 })
 
-app.listen(3000, ()=>{
-    console.log("Servido rodando na porta 3000")
+conexao.connect((erro) => {
+    if (erro) {
+        return console.log(erro)
+    }
+
+    console.log("Estou conectado ao MySQL.")
+
+    app.listen(3000, ()=>{
+        console.log("Servido rodando na porta 3000")
+    })
 })
